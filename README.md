@@ -55,13 +55,11 @@ starter-app/
 
 ## 1. Clone the Repo
 ```
-git clone https://github.com/yourusername/starter-app.git
-cd starter-app
+git clone https://github.com/vivek-0115/App_stater.git
 ```
 
 ## 2. Backend Setup (Flask)
 ```
-cd backend
 python -m venv venv
 source venv/bin/activate  # Linux/macOS
 # or
