@@ -1,0 +1,8 @@
+1. change url for app.run(debug=True, host='192.168.29.7', port=5000) in app.py as your network url.
+2. same url give in, vue state management in state => backendUrl: "http://192.168.29.7:5000"
+3. your backendUrl is must be same as you flask server url. if any problem use CORS.
+4. if you add any page, view or component be sure to add their route in router
+
+
+
+
