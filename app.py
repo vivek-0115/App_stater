@@ -4,6 +4,9 @@ from backend.config import LocalDevelopmentConfig
 from backend.models import db, User, Role
 from backend.resource import api
 from flask_security import Security, SQLAlchemyUserDatastore
+from flask_mail import Mail
+
+mail = Mail()
 
 def createApp():
     app = Flask(__name__)
@@ -11,6 +14,7 @@ def createApp():
     CORS(app)
     db.init_app(app) # Initiating Model
     api.init_app(app) # Initiating Api
+    mail.init_app(app) 
     datastore = SQLAlchemyUserDatastore(db, User, Role) # Create the user datastore
     app.security=Security(app, datastore, register_blueprint=False) # Initialize Flask-Security
     app.app_context().push()

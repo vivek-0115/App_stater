@@ -2,9 +2,13 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 import store from '@/store'
 
+import NotFound from '@/components/NotFound.vue'
+
 import HomeView from '../views/HomeView.vue'
 import LoginView from '@/views/LoginView.vue'
 import SignupView from '@/views/SignupView.vue'
+import ForgotPassword from '../views/ForgotPassword.vue';
+import ResetPassword from '../views/ResetPassword.vue';
 
 // User
 import UserDashboardView from '@/views/User/DashboardView.vue'
@@ -24,6 +28,11 @@ const routes = [
     path: '/unauthorized',
     name: 'Unauthorized',
     component: Unauthorized
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'NotFound',
+    component: NotFound,
   },
 
 
@@ -53,6 +62,9 @@ const routes = [
     name: 'signup',
     component: SignupView
   },
+
+  { path: '/forgot-password', component: ForgotPassword },
+  { path: '/reset-password/:token', component: ResetPassword },
 
 
   // ROle: User's Routes
